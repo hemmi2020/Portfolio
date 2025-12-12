@@ -27,9 +27,13 @@ const Navbar = () => {
   const scrollToSection = (href) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      // Close mobile menu first
+      setIsOpen(false);
+      // Small delay to allow menu to close, then scroll
+      setTimeout(() => {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 300);
     }
-    setIsOpen(false);
   };
 
   return (
