@@ -76,7 +76,7 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="section-padding bg-white">
+    <section id="about" className="section-padding bg-dark-900">
       <div className="container" ref={ref}>
         <motion.div
           variants={containerVariants}
@@ -86,7 +86,7 @@ const About = () => {
         >
           <motion.div
             variants={itemVariants}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 text-primary-800 rounded-full text-sm font-medium mb-4"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-primary-500/10 text-primary-400 rounded-full text-sm font-medium mb-4 border border-primary-500/30"
           >
             <Coffee className="w-4 h-4" />
             About Me
@@ -94,7 +94,7 @@ const About = () => {
           
           <motion.h2
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+            className="text-4xl md:text-5xl font-bold text-white mb-6"
           >
             Crafting Digital Solutions with
             <span className="gradient-text block">Passion & Precision</span>
@@ -102,7 +102,7 @@ const About = () => {
           
           <motion.p
             variants={itemVariants}
-            className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
             I'm a passionate full-stack developer with expertise in modern web technologies. 
             I love building scalable applications that solve real-world problems and create 
@@ -126,11 +126,11 @@ const About = () => {
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="card p-6 text-center group"
               >
-                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-600 transition-colors duration-300">
-                  <IconComponent className="w-6 h-6 text-primary-600 group-hover:text-white transition-colors duration-300" />
+                <div className="w-12 h-12 bg-primary-500/20 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-600 transition-colors duration-300">
+                  <IconComponent className="w-6 h-6 text-primary-400 group-hover:text-white transition-colors duration-300" />
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
-                <div className="text-gray-600 text-sm">{stat.label}</div>
+                <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
+                <div className="text-gray-400 text-sm">{stat.label}</div>
               </motion.div>
             );
           })}
@@ -156,7 +156,7 @@ const About = () => {
                   <div className={`w-12 h-12 ${skill.color} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                     <IconComponent className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900">{skill.category}</h3>
+                  <h3 className="text-xl font-semibold text-white">{skill.category}</h3>
                 </div>
                 
                 <div className="flex flex-wrap gap-2">
@@ -185,8 +185,8 @@ const About = () => {
           className="mt-16 text-center"
         >
           <div className="max-w-3xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Beyond Code</h3>
-            <p className="text-lg text-gray-600 leading-relaxed mb-8">
+            <h3 className="text-2xl font-bold text-white mb-6">Beyond Code</h3>
+            <p className="text-lg text-gray-300 leading-relaxed mb-8">
               When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, 
               or sharing knowledge with the developer community. I believe in continuous learning and staying 
               updated with the latest industry trends.
@@ -199,7 +199,7 @@ const About = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ delay: 0.5 + (index * 0.1) }}
-                  className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary-100 hover:text-primary-800 transition-colors duration-200"
+                  className="px-4 py-2 bg-dark-800 text-gray-300 rounded-full text-sm font-medium hover:bg-primary-500/20 hover:text-primary-400 hover:border-primary-500/50 border border-dark-700 transition-colors duration-200"
                 >
                   {trait}
                 </motion.span>

@@ -9,6 +9,7 @@ import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import LoadingScreen from './components/LoadingScreen';
+import SmoothScroll from './components/SmoothScroll';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -16,38 +17,40 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 600);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className="App">
-      <AnimatePresence mode="wait">
-        {isLoading ? (
-          <LoadingScreen key="loading" />
-        ) : (
-          <motion.div
-            key="main"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="min-h-screen bg-white"
-          >
-            <Navbar />
-            <main>
-              <Hero />
-              <About />
-              <Experience />
-              <Projects />
-              <Education />
-              <Contact />
-            </main>
-            <Footer />
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+    <SmoothScroll>
+      <div className="App">
+        <AnimatePresence mode="wait">
+          {isLoading ? (
+            <LoadingScreen key="loading" />
+          ) : (
+            <motion.div
+              key="main"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="min-h-screen bg-dark-950"
+            >
+              <Navbar />
+              <main>
+                <Hero />
+                <About />
+                <Experience />
+                <Projects />
+                <Education />
+                <Contact />
+              </main>
+              <Footer />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </SmoothScroll>
   );
 }
 

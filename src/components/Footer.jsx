@@ -32,7 +32,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-900 text-white relative overflow-hidden">
+    <footer className="bg-dark-950 text-white relative overflow-hidden border-t border-dark-800">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5" />
       
@@ -167,15 +167,9 @@ const Footer = () => {
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2 text-gray-400 text-sm">
-              <span>© {currentYear} Muhammad Hamza Ashfaq. Made with</span>
-              <motion.div
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 1, repeat: Infinity }}
-              >
-                <Heart className="w-4 h-4 text-red-500 fill-current" />
-              </motion.div>
-              <span>and lots of</span>
-              <Coffee className="w-4 h-4 text-amber-500" />
+              <span>© {currentYear} Muhammad Hamza Ashfaq. </span>
+              
+              
             </div>
             
             <div className="flex items-center gap-4 text-sm text-gray-400">
@@ -203,9 +197,7 @@ const Footer = () => {
             viewport={{ once: true }}
             className="mt-6 text-center"
           >
-            <p className="text-gray-500 text-xs">
-              Built with React, Tailwind CSS, Framer Motion, and deployed on Render
-            </p>
+          
           </motion.div>
         </motion.div>
       </div>
